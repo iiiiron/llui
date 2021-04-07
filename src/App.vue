@@ -2,12 +2,17 @@
   <div id="app">
     <demo-button></demo-button>
     <demo-dialog></demo-dialog>
+    <demo-radio></demo-radio>
+    <demo-checkbox></demo-checkbox>
+    <demo-rater></demo-rater>
   </div>
 </template>
 <script>
-  import demoButton from "./components/demo/demoButton";
-  import demoDialog from "./components/demo/demoDialog";
-
+  import demoButton from "./demo/demoButton";
+  import demoDialog from "./demo/demoDialog";
+  import demoRadio from "./demo/demoRadio";
+  import demoCheckbox from "./demo/demoCheckbox";
+  import demoRater from "./demo/demoRater";
 
   export default {
     data(){
@@ -17,7 +22,10 @@
     },
     components:{
       demoButton,
-      demoDialog
+      demoDialog,
+      demoRadio,
+      demoCheckbox,
+      demoRater,
     },
     methods:{
 
@@ -28,15 +36,4 @@
 
 <style lang="scss">
 
-  .input {
-    & .d-input {
-      width: 18vw;
-    }
-  }
-
-  .formItem {
-    .d-input {
-      width: 20vw;
-    }
-  }
 </style>

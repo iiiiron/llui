@@ -61,7 +61,7 @@
 </template>
 
 <script>
-  import DButton from "../Button";
+  import DButton from "../components/Button";
   export default {
     name: "demoButton",
     components:{

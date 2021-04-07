@@ -1,7 +1,12 @@
 const path = require('path')
 
 module.exports = {
-  pages: {
+  lintOnSave: false,
+  chainWebpack: config => {
+    const types = ['vue-modules', 'vue', 'normal-modules', 'normal']
+    types.forEach(type => addStyleResource(config.module.rule('less').oneOf(type)))
+  },
+pages: {
     index: {
       // 修改项目入口文件
       entry: 'src/main.js',
@@ -24,9 +29,19 @@ module.exports = {
   // },
   css: {
     loaderOptions: {
+
       scss: {
         prependData: '@import "@/assets/scss/variables.scss";'
       },
     },
   },
+}
+function addStyleResource (rule) {
+  rule.use('style-resource')
+    .loader('style-resources-loader')
+    .options({
+      patterns: [
+        path.resolve(__dirname, './src/assets/css/base.less'),
+      ],
+    })
 }

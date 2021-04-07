@@ -20,9 +20,7 @@
       <span>这是一段信息</span>
       <template v-slot:footer>
         <d-button @click="dialogVisiable = false">取消</d-button>
-        <d-button type="primary" @click="dialogVisiable = false"
-        >确定</d-button
-        >
+        <d-button type="primary" @click="dialogVisiable = false">确定</d-button>
       </template>
     </d-dialog>
   </div>
@@ -30,8 +28,8 @@
 </template>
 
 <script>
-  import DDialog from "../Dialog";
-  import DButton from "../Button"
+  import DDialog from "../components/Dialog";
+  import DButton from "../components/Button"
   export default {
     name: "demoDialog",
     components:{
